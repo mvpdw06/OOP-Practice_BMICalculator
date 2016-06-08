@@ -9,7 +9,7 @@ namespace CalculateMBI_OOP
         public Gender Gender { get; set; }
     }
 
-    public static class BMI
+    public static class BMI_Function
     {
         public static double GetHumanBMI(Human human)
         {
@@ -17,39 +17,86 @@ namespace CalculateMBI_OOP
         }
     }
 
-    public static class ResultFactory
+    public abstract class BMICaculator
     {
-        public static string GetComment(Gender gender, double BMI)
+        public BMICaculator(Human human)
         {
-            if (gender == Gender.Male)
+            _human = human;
+        }
+
+        private Human _human;
+        protected double _minBMI { get; set; }
+        protected double _maxBMI { get; set; }
+
+        private bool isCalculate { get; set; }
+        private double _humanBMI { get; set; }
+        public double humanBMI
+        {
+            get
             {
-                if (BMI < 20)
+                if (!isCalculate)
                 {
-                    return "太瘦";
+                    isCalculate = true;
+                    _humanBMI = BMI_Function.GetHumanBMI(_human);
                 }
-                else if (BMI > 25)
-                {
-                    return "太胖";
-                }
-                else
-                {
-                    return "適中";
-                }
+
+                return _humanBMI;
+            }
+        }
+
+        public string Comment
+        {
+            get
+            {
+                return GetComment();
+            }
+        }
+        private string GetComment()
+        {
+            if (humanBMI < _minBMI)
+            {
+                return "太瘦";
+            }
+            else if (humanBMI > _maxBMI)
+            {
+                return "太胖";
             }
             else
             {
-                if (BMI < 18)
-                {
-                    return "太瘦";
-                }
-                else if (BMI > 22)
-                {
-                    return "太胖";
-                }
-                else
-                {
-                    return "適中";
-                }
+                return "適中";
+            }
+        }
+    }
+
+    public class MaleCaculator : BMICaculator
+    {
+        public MaleCaculator(Human human, double minBMI, double maxBMI) : base(human)
+        {
+            _minBMI = minBMI;
+            _maxBMI = maxBMI;
+        }
+    }
+
+    public class FeMaleCaculator : BMICaculator
+    {
+        public FeMaleCaculator(Human human, double minBMI, double maxBMI) : base(human)
+        {
+            _minBMI = minBMI;
+            _maxBMI = maxBMI;
+        }
+    }
+
+    public static class CalculatorFactory
+    {
+        public static BMICaculator GetCaculator(this Human human)
+        {
+            if (human.Gender == Gender.Male)
+            {
+                return new MaleCaculator(human, 20, 25);
+            }
+            else
+            {
+                return new FeMaleCaculator(human, 18, 22);
             }
         }
     }

@@ -19,10 +19,9 @@ namespace CalculateMBI_OOP
                 Weight = Convert.ToDouble(this.textBox2.Text)
             };
 
-            var humanBMI = BMI.GetHumanBMI(human);
-            var comment = ResultFactory.GetComment(human.Gender, humanBMI);
+            var cac = human.GetCaculator();
 
-            MessageBox.Show("BMI：" + humanBMI + "，結果為：" + comment);
+            MessageBox.Show("BMI：" + cac.humanBMI + "，結果為：" + cac.Comment);
         }
     }
 }
