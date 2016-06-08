@@ -12,12 +12,17 @@ namespace CalculateMBI_OOP
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            Human human = new Human();
-            human.Height = Convert.ToDouble(this.textBox1.Text);
-            human.Weight = Convert.ToDouble(this.textBox2.Text);
+            Human human = new Human()
+            {
+                Gender = radioButton1.Checked ? Gender.Male : Gender.FeMale,
+                Height = Convert.ToDouble(this.textBox1.Text),
+                Weight = Convert.ToDouble(this.textBox2.Text)
+            };
 
-            var BMI = human.BMI;
-            MessageBox.Show("BMI：" + BMI + "，結果為：" + human.Comment);
+            var humanBMI = BMI.GetHumanBMI(human);
+            var comment = ResultFactory.GetComment(human.Gender, humanBMI);
+
+            MessageBox.Show("BMI：" + humanBMI + "，結果為：" + comment);
         }
     }
 }

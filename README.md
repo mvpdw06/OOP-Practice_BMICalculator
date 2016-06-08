@@ -11,3 +11,8 @@
 ### 2016/06/07 First Commit
 * Create this program.
 * Using only class concept.
+
+### 2016/06/08 Commit
+* Single Responsibility
+1.  seperate Human class. 
+2.  using static clss for calculate BMI and get comment.

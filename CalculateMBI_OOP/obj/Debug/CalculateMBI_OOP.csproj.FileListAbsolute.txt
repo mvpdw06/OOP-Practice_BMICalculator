@@ -1,1 +1,9 @@
 E:\myGit\OOP_Practice\CalculateMBI_OOP\CalculateMBI_OOP\bin\Debug\CalculateMBI_OOP.exe.config
+E:\myGit\OOP_Practice\OOP-Practice_CalculateBMI\OOP-Practice_CalculateBMI\CalculateMBI_OOP\bin\Debug\CalculateMBI_OOP.exe.config
+E:\myGit\OOP_Practice\OOP-Practice_CalculateBMI\OOP-Practice_CalculateBMI\CalculateMBI_OOP\bin\Debug\CalculateMBI_OOP.exe
+E:\myGit\OOP_Practice\OOP-Practice_CalculateBMI\OOP-Practice_CalculateBMI\CalculateMBI_OOP\bin\Debug\CalculateMBI_OOP.pdb
+E:\myGit\OOP_Practice\OOP-Practice_CalculateBMI\OOP-Practice_CalculateBMI\CalculateMBI_OOP\obj\Debug\CalculateMBI_OOP.csprojResolveAssemblyReference.cache
+E:\myGit\OOP_Practice\OOP-Practice_CalculateBMI\OOP-Practice_CalculateBMI\CalculateMBI_OOP\obj\Debug\CalculateMBI_OOP.Properties.Resources.resources
+E:\myGit\OOP_Practice\OOP-Practice_CalculateBMI\OOP-Practice_CalculateBMI\CalculateMBI_OOP\obj\Debug\CalculateMBI_OOP.csproj.GenerateResource.Cache
+E:\myGit\OOP_Practice\OOP-Practice_CalculateBMI\OOP-Practice_CalculateBMI\CalculateMBI_OOP\obj\Debug\CalculateMBI_OOP.exe
+E:\myGit\OOP_Practice\OOP-Practice_CalculateBMI\OOP-Practice_CalculateBMI\CalculateMBI_OOP\obj\Debug\CalculateMBI_OOP.pdb

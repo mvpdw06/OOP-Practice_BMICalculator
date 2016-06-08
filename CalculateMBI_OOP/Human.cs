@@ -7,23 +7,21 @@ namespace CalculateMBI_OOP
         public double Height { get; set; }
         public double Weight { get; set; }
         public Gender Gender { get; set; }
-        public double BMI
-        {
-            get { return GetBMI(); }
-        }
-        public string Comment
-        {
-            get { return GetComment(); }
-        }
+    }
 
-        private double GetBMI()
+    public static class BMI
+    {
+        public static double GetHumanBMI(Human human)
         {
-            return Weight / Math.Pow(Height, 2);
+            return human.Weight / Math.Pow(human.Height, 2);
         }
+    }
 
-        private string GetComment()
+    public static class ResultFactory
+    {
+        public static string GetComment(Gender gender, double BMI)
         {
-            if (Gender == Gender.Male)
+            if (gender == Gender.Male)
             {
                 if (BMI < 20)
                 {
